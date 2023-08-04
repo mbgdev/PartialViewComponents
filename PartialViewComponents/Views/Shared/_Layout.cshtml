@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PartialViewComponents</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PartialViewComponents.styles.css" asp-append-version="true" />
+</head>
+<body style="background-color:"#d4d3ce">
+
+
+    <partial name="_HeaderPartial" />
+
+    <div class="row container">
+        <div class="col-lg-3">
+
+    <vc:category-list></vc:category-list>     
+
+        </div>
+        <div class="col-lg-9">
+
+            @RenderBody()
+
+        </div>
+    </div>
+
+    
+
+    <partial name="_footerPartial" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
